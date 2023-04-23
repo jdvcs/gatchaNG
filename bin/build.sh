@@ -2,6 +2,6 @@
 
 source "bin/init/env.sh"
 
-rm -rf app/build/outputs
+rm -rf V2rayNG/app/build/outputs
 ./gradlew --stop
 ./gradlew :app:assembleRelease
