@@ -113,7 +113,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: APKs
-          path: V2rayNG/app/build/outputs/apk/release
+          path: V2rayNG/app/build/outputs/apk/release/*
   publish:
     name: Publish Release
     if: github.event.inputs.publish != 'y'
