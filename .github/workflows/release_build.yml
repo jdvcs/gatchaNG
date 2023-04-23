@@ -83,7 +83,7 @@ jobs:
       - name: Gradle cache
         uses: actions/cache@v3
         with:
-          path: ~/.gradle
+          path: ~/V2rayNG/.gradle
           key: gradle-${{ hashFiles('**/*.gradle.kts') }}
       - name: Signing properties
         env:
@@ -106,7 +106,7 @@ jobs:
           echo "ndk.dir=${ANDROID_HOME}/ndk/25.0.8775105" >> local.properties
           ./run init action library
           ./V2rayNG/gradlew app:assembleRelease
-          APK=$(find app/build/outputs/apk -name '*arm64-v8a*.apk')
+          APK=$(find V2rayNG/app/build/outputs/apk -name '*arm64-v8a*.apk')
           APK=$(dirname $APK)
           echo "APK=$APK" >> $GITHUB_ENV
       - uses: actions/upload-artifact@v3
