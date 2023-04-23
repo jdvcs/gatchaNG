@@ -1,0 +1,6 @@
+[submodule "submodules/core"]
+	path = submodules/core
+	url = https://github.com/jdvcs/Xray-core
+[submodule "submodules/library"]
+	path = submodules/library
+	url = https://github.com/jdvcs/AndroidLibXrayLite
