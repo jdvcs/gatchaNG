@@ -93,6 +93,7 @@ jobs:
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
           SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
         run: |
+          cd V2rayNG
           touch keystore.properties
           echo keyAlias="$SIGNING_KEY_ALIAS" > keystore.properties
           echo keyPassword="$SIGNING_KEY_PASSWORD" >> keystore.properties
@@ -107,7 +108,6 @@ jobs:
           echo "sdk.dir=${ANDROID_HOME}" > local.properties
           echo "ndk.dir=${ANDROID_HOME}/ndk/25.0.8775105" >> local.properties
           ./run init action library
-          cd V2rayNG
           ./gradlew app:assembleRelease
           APK=$(find app/build/outputs/apk -name '*arm64-v8a*.apk')
           APK=$(dirname $APK)
