@@ -55,7 +55,7 @@ jobs:
         uses: actions/cache@v3
         if: steps.cache.outputs.cache-hit != 'true'
         with:
-          path: ~/.gradle
+          path: ~/V2rayNG/.gradle
           key: native-${{ hashFiles('**/*.gradle.kts') }}
       - name: Native Build
         if: steps.cache.outputs.cache-hit != 'true'
